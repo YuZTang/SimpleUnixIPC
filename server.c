@@ -4,7 +4,7 @@
 #include <sys/un.h>
 #include <unistd.h>
 #include <stdlib.h>
-#define SOCKET_NAME "tmp/DemoSocket"
+#define SOCKET_NAME "/tmp/DemoSocket"
 #define BUFFER_SIZE 128
 
 int main() {
@@ -51,10 +51,12 @@ int main() {
     }
     printf("Listening successfully!\n");
 
+    printf("into loop!\n");
 
     // Main loop that server handling connections
     while(1){
-        printf("Waiting on accept() system calls");
+        printf("IN loop\n");
+        printf("Waiting on accept() system calls\n");
         data_socket = accept(connection_socket,NULL,NULL);
 
         if (data_socket == -1){
