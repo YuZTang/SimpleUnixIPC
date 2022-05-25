@@ -51,11 +51,9 @@ int main() {
     }
     printf("Listening successfully!\n");
 
-    printf("into loop!\n");
 
     // Main loop that server handling connections
     while(1){
-        printf("IN loop\n");
         printf("Waiting on accept() system calls\n");
         data_socket = accept(connection_socket,NULL,NULL);
 
